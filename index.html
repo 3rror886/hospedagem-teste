@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetFake - Cassino & Esportes (Visual)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎰 BetFake</div>
+        <nav class="main-nav">
+            <button class="nav-btn active" onclick="switchTab('sports')">⚽ Esportes</button>
+            <button class="nav-btn" onclick="switchTab('casino')">🎰 Cassino / Azar</button>
+        </nav>
+        <div class="user-balance">Saldo: <span id="balance">R$ 100,00</span></div>
+    </header>
+
+    <main>
+        <!-- ABA DE ESPORTES -->
+        <section id="sports-tab" class="content-section active">
+            <h2>⚽ Jogos de Futebol (Simulação)</h2>
+            
+            <div class="match-card">
+                <div class="teams">Flamengo <span>vs</span> Palmeiras</div>
+                <div class="odds-group">
+                    <button class="odd-btn" onclick="selectOdd('Flamengo', 1.85)">Casa: 1.85</button>
+                    <button class="odd-btn" onclick="selectOdd('Empate', 3.40)">Empate: 3.40</button>
+                    <button class="odd-btn" onclick="selectOdd('Palmeiras', 4.20)">Fora: 4.20</button>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="teams">Real Madrid <span>vs</span> Barcelona</div>
+                <div class="odds-group">
+                    <button class="odd-btn" onclick="selectOdd('Real Madrid', 2.10)">Casa: 2.10</button>
+                    <button class="odd-btn" onclick="selectOdd('Empate', 3.60)">Empate: 3.60</button>
+                    <button class="odd-btn" onclick="selectOdd('Barcelona', 3.10)">Fora: 3.10</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA DE CASSINO / JOGOS DE AZAR -->
+        <section id="casino-tab" class="content-section">
+            <h2>🎲 Cassino e Jogos de Azar (Demonstrativo)</h2>
+            
+            <div class="casino-grid">
+                <!-- Jogo do Tigrinho / Slot Falso -->
+                <div class="casino-card">
+                    <h3>🐯 Lucky Tiger Slot</h3>
+                    <div class="slot-machine">
+                        <span id="slot1">🍒</span>
+                        <span id="slot2">🍋</span>
+                        <span id="slot3">🍊</span>
+                    </div>
+                    <button class="casino-action-btn" onclick="simulateSpin()">Girar Rolo (Falso)</button>
+                </div>
+
+                <!-- Jogo do Aviãozinho / Crash Falso -->
+                <div class="casino-card">
+                    <h3>🚀 Rocket Crash</h3>
+                    <div class="crash-display">
+                        <span id="multiplier">1.00x</span>
+                        <p id="crash-status">Pronto para a decolagem</p>
+                    </div>
+                    <button class="casino-action-btn status-playing" onclick="simulateCrash()">Simular Rodada</button>
+                </div>
+
+                <!-- Roleta Falsa -->
+                <div class="casino-card">
+                    <h3>🎡 Roleta Suprema</h3>
+                    <div class="roulette-display">
+                        <div class="wheel-placeholder">NÚMERO SORTEADO</div>
+                        <span id="roulette-result">--</span>
+                    </div>
+                    <div class="roulette-bets">
+                        <button class="bet-color-btn btn-red" onclick="simulateRoulette('Vermelho')">Apostar no Vermelho</button>
+                        <button class="bet-color-btn btn-black" onclick="simulateRoulette('Preto')">Apostar no Preto</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cupom de Apostas Lateral (Apenas para o Futebol) -->
+        <aside class="bet-slip">
+            <h3>📋 Cupom de Esportes</h3>
+            <div id="slip-content">
+                <p class="empty-msg">Selecione uma cotação de futebol para simular.</p>
+            </div>
+            <div class="slip-input-group">
+                <label for="bet-amount">Valor da Aposta (R$):</label>
+                <input type="number" id="bet-amount" placeholder="0.00" oninput="updatePotentialWin()">
+            </div>
+            <div class="potential-win">
+                Retorno Potencial: <span id="possible-win">R$ 0,00</span>
+            </div>
+            <button class="place-bet-btn" onclick="simulateBet()">Finalizar Aposta Esportiva</button>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

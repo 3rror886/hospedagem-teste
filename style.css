@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1f2c;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #0f131a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00ff88;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: transparent;
+    color: #a0aec0;
+    border: 1px solid #334155;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #252f3f;
+    color: #00ff88;
+    border-color: #00ff88;
+}
+
+.user-balance {
+    background-color: #252f3f;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-section {
+    display: none;
+    flex: 2;
+}
+
+.content-section.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #e2e8f0;
+}
+
+/* Estilos de Futebol */
+.match-card {
+    background-color: #252f3f;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.teams {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.teams span {
+    color: #718096;
+    font-size: 14px;
+}
+
+.odds-group {
+    display: flex;
+    gap: 10px;
+}
+
+.odd-btn {
+    flex: 1;
+    background-color: #0f131a;
+    color: #00ff88;
+    border: 1px solid #334155;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.odd-btn:hover, .odd-btn.selected {
+    background-color: #00ff88;
+    color: #0f131a;
+}
+
+/* Estilos de Cassino */
+.casino-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.casino-card {
+    background-color: #252f3f;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #334155;
+}
+
+.slot-machine {
+    background-color: #0f131a;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 32px;
+    letter-spacing: 10px;
+    border: 2px solid #ff0077;
+}
+
+.crash-display {
+    background-color: #0f131a;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #00bfff;
+}
+
+#multiplier {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00bfff;
+    display: block;
+}
+
+#crash-status {
+    font-size: 12px;
+    color: #a0aec0;
+    margin-top: 5px;
+}
+
+.roulette-display {
+    background-color: #0f131a;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.wheel-placeholder {
+    font-size: 12px;
+    color: #718096;
+}
+
+#roulette-result {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.roulette-bets {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.bet-color-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-red { background-color: #e53e3e; }
+.btn-black { background-color: #1a202c; border: 1px solid #4a5568;}
+
+.casino-action-btn {
+    width: 100%;
+    background-color: #ff0077;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.casino-action-btn:hover { background-color: #dd0066; }
+.status-playing { background-color: #00bfff; }
+.status-playing:hover { background-color: #0099cc; }
+
+/* Estilos do Cupom Lateral */
+.bet-slip {
+    flex: 1;
+    background-color: #0f131a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #252f3f;
+    height: fit-content;
+}
+
+.bet-slip h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #252f3f;
+    padding-bottom: 10px;
+}
+
+.empty-msg {
+    color: #718096;
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.selection-details {
+    background-color: #252f3f;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.slip-input-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slip-input-group input {
+    background-color: #252f3f;
+    border: 1px solid #334155;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.potential-win {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+#possible-win {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.place-bet-btn {
+    width: 100%;
+    background-color: #00ff88;
+    color: #0f131a;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
